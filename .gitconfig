@@ -1,0 +1,19 @@
+[alias]
+	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+	ucommit = reset --soft HEAD~1
+	co = checkout
+	uadd=reset
+	br = branch
+	pom = pull origin master
+	pum = push origin master
+	branch-name = "!git rev-parse --abbrev-ref HEAD"
+	pubr = "!git push origin $(git branch-name)"
+[core]
+	editor = /usr/bin/vim
+[user]
+	email = eiiki0808@gmail.com
+	name = Eirikur Ingi Magnusson
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
